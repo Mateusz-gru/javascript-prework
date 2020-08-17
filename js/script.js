@@ -1,3 +1,16 @@
+function playGame(1 kamień, 2 papier, 3 nożyczki) {
+   clearMessages ();
+}
+if (playerInput == '1') {
+  playerMove = 'kamień';
+}
+else if (playerInput == '2') {
+    playerMove = 'papier';
+}
+else if (playerInput == '3') {
+    playerMove = 'nożyczki';
+}
+    
 // FUNKCJA
 
 function getMoveName(argMoveId) {
@@ -192,3 +205,29 @@ else (computerMove == 'nożyczki' && playerMove == 'nożyczki') {
   printMessage('Remis!');
 }
 */
+}
+playGame(3);
+
+function buttonClicked() {
+  playGame('Kamień');
+}
+
+let playRock = document.getElementById('play-rock');
+
+palyRock.addEventListener('click', buttonClicked);
+
+function buttonClicked() {
+  playGame('Papier');
+}
+
+let playPaper = document.getElementById('play-paper');
+
+palyPaper.addEventListener('click', buttonClicked);
+
+function buttonClicked() {
+  playGame('Nożyczki');
+}
+
+let playScissors = document.getElementById('play-scissors');
+
+palyScissors.addEventListener('click', buttonClicked);
