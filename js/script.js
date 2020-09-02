@@ -1,8 +1,9 @@
-function playGame(playerInput) {
-    clearMessages ();
+{
+    const playGame = function(playerInput) {
+        clearMessages ();
     
 
-        function getMoveName(argMoveId) {
+        const getMoveName = function(argMoveId) {
             if (argMoveId == 1) {
                 return 'kamień';
             } else if (argMoveId == 2) {
@@ -15,7 +16,7 @@ function playGame(playerInput) {
                 return 'nieznany ruch';
         }
 
-        function displayResult(argComputerMove, argPlayerMove) {
+        const displayResult = function(argComputerMove, argPlayerMove) {
             if ( argComputerMove == 'kamień' && argPlayerMove == 'papier') {
                 printMessage('Ty wygrywasz!');
             } else if ( argComputerMove == 'kamień' && argPlayerMove == 'nozyce') {
@@ -37,11 +38,11 @@ function playGame(playerInput) {
 
         // RUCH KOMPUTERA
 
-        let randomNumber = Math.floor(Math.random() * 3 + 1);
+        const randomNumber = Math.floor(Math.random() * 3 + 1);
 
         console.log('Wylosowana liczba to: ' + randomNumber);
 
-        let computerMove = getMoveName(randomNumber);
+        const computerMove = getMoveName(randomNumber);
         /*
             if (randomNumber == 1) {
                 computerMove = 'kamień';
@@ -61,7 +62,7 @@ function playGame(playerInput) {
         console.log('Gracz wpisał: ' + playerInput);
         */
 
-        let playerMove = getMoveName(playerInput);
+        const playerMove = getMoveName(playerInput);
 
         /*
             if (playerInput == '1') {
@@ -141,15 +142,15 @@ function playGame(playerInput) {
         printMessage('WPROWADZ LICZBE CAŁKOWITĄ W ZAKRESIE 1-3')
         */
     
+    }
+    document.getElementById('play-rock').addEventListener('click', function() {
+        playGame(1);
+    });
+    document.getElementById('play-paper').addEventListener('click', function() {
+        playGame(2);
+    });
+    document.getElementById('play-scissors').addEventListener('click', function() {
+        playGame(3);
+    });
+
 }
-document.getElementById('play-rock').addEventListener('click', function() {
-    playGame(1);
-});
-document.getElementById('play-paper').addEventListener('click', function() {
-    playGame(2);
-});
-document.getElementById('play-scissors').addEventListener('click', function() {
-    playGame(3);
-});
-
-
